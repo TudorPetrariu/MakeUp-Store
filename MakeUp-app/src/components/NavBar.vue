@@ -1,34 +1,33 @@
    <template>
-  <div id="navbar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarColor03"
-        aria-controls="navbarColor03"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <div>
+    <nav>
+      <div>
+        <h4>The Nav</h4>
+      </div>
 
-      <div class="collapse navbar-collapse" id="navbarColor03">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" />
-          <!-- <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button> -->
-        </form>
+      <ul v-bind:class="{active:isTrue}" class="nav-links">
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Categories</a>
+        </li>
+        <li>
+          <a href="#">Random</a>
+        </li>
+        <li>
+          <input
+            v-model="search"
+            type="text"
+            placeholder="Search your product ..."
+            @keyup="emitSearchValue"
+          />
+        </li>
+      </ul>
+      <div v-on:click="isTrue= !isTrue" v-bind:class="{toggle:isTrue}" class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
       </div>
     </nav>
   </div>
@@ -36,13 +35,22 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { EventBus } from "../event-bus";
 
 @Component({
   data() {
-    return {};
+    return {
+      search: "",
+      isTrue: false
+    };
+  },
+  methods: {
+    emitSearchValue() {
+      EventBus.$emit("search-value", this.search);
+    }
   }
 })
-export default class Header extends Vue {}
+export default class NavBar extends Vue {}
 </script>
 
 <style scoped>

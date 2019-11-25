@@ -1,3 +1,92 @@
+$main-color: rgb(72, 180, 184);
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+html,
+body {
+	overflow-x: hidden;
+	position: relative;
+}
+nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 7vh;
+	background-color: $main-color;
+	list-style: none;
+	a:hover {
+		text-decoration: none;
+	}
+	input {
+		color: white;
+	}
+}
+
+.burger {
+	display: none;
+}
+@media screen and(max-width:768px) {
+	.nav-links {
+		position: absolute;
+		right: 0;
+		height: 93vh;
+		top: 7vh;
+		background-color: $main-color;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 30%;
+		transform: translateX(100%);
+		transition: transform 0.5s ease-in;
+	}
+	li {
+		opacity: 0;
+	}
+	.burger {
+		display: block;
+	}
+}
+
+@keyframes navLinkFade {
+	from {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+}
+to {
+	opacity: 1;
+	transform: translateX();
+}
+.toggle .line1 {
+	transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+	opacity: 0;
+}
+.toggle .line3 {
+	transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.active {
+	transform: translateX(0);
+	z-index: 1;
+
+	li {
+		opacity: 1;
+		padding: 30px;
+		animation: navLinkFade 1.1s ease forwards 0.2s;
+	}
+}
+
+.burger div {
+	width: 25px;
+	height: 4px;
+	background-color: coral;
+	margin: 5px;
+	transition: all 0.4s ease;
+}
 @mixin grid($cols, $mgn) {
 	float: left;
 	margin-right: $mgn;
