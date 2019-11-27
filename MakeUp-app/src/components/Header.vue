@@ -7,10 +7,10 @@
 
       <ul v-bind:class="{active:isTrue}" class="nav-links">
         <li>
-          <a href="#">Home</a>
+          <router-link to="/home">Home</router-link>
         </li>
         <li>
-          <a href="#">Categories</a>
+          <router-link to="/categories">Categories</router-link>
         </li>
         <li>
           <a href="#">Random</a>
@@ -24,6 +24,7 @@
           />
         </li>
       </ul>
+
       <div v-on:click="isTrue= !isTrue" v-bind:class="{toggle:isTrue}" class="burger">
         <div class="line1"></div>
         <div class="line2"></div>
@@ -50,7 +51,7 @@ import { EventBus } from "../event-bus";
     }
   }
 })
-export default class NavBar extends Vue {}
+export default class Header extends Vue {}
 </script>
 
 <style scoped>

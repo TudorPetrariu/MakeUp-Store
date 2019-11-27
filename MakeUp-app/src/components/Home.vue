@@ -2,13 +2,14 @@
   <div class="container">
     <h2>Cards</h2>
     <div class="row">
-      <div v-for="product in filteredProducts" :key="product.index">
+      <div v-for="product in filteredProducts " :key="product.index">
         <div class="card">
           <div class="card-image">
             <img :src="product.api_featured_image" alt="product" />
           </div>
           <div class="card-content">
             <span class="card-title">{{product.name}}</span>
+
             <p>Brand: {{product.brand | to-uppercase}}</p>
             <p>Category: {{product.category | to-uppercase}}</p>
             <p>Type: {{product.product_type.replace(/_/g, "-") | to-uppercase}}</p>
@@ -23,7 +24,7 @@
             ></div>
           </div>
           <div class="card-action center">
-            <a href="#">More Details</a>
+            <a @click="goToDetail(product)">More Details</a>
           </div>
         </div>
       </div>
@@ -35,34 +36,36 @@
 import { Component, Vue } from "vue-property-decorator";
 import { EventBus } from "../event-bus";
 
-const url = `http://makeup-api.herokuapp.com/api/v1/products.json`;
 @Component({
+  props: ["products"],
   data() {
     return {
-      products: [],
       searchValue: ""
     };
   },
+  methods: {
+    goToDetail(product) {
+      console.log(product);
+      localStorage.setItem("product", JSON.stringify(product));
+      this.$router.push({
+        name: "Details"
+        // params: { Pid: prodId }
+      });
+    }
+  },
 
-  methods: {},
-  async created() {
-    this.products = await this.$http
-      .get(url)
-      .then(response => response.json())
-      .then(result => result.slice(0, 10));
-
-    console.log(this.products);
-
+  created() {
     EventBus.$on("search-value", search => {
       this.searchValue = search;
     });
   },
   computed: {
     filteredProducts: function() {
-      return this.products.filter(product => {
-        return product.name
-          .toLowerCase()
-          .includes(this.searchValue.toLowerCase());
+      return [...this.products.slice(0, 10)].filter(product => {
+        return (
+          !this.searchValue ||
+          product.name.toLowerCase().includes(this.searchValue.toLowerCase())
+        );
       });
     }
   }

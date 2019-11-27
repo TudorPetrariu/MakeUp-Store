@@ -5,12 +5,6 @@
           box-sizing: border-box;
 }
 
-html,
-body {
-  overflow-x: hidden;
-  position: relative;
-}
-
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,16 +15,22 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   min-height: 7vh;
-  background-color: #48b4b8;
+  background-color: #efefef;
   list-style: none;
 }
 
-nav a:hover {
+nav ul a {
+  color: #000000;
+}
+
+nav a:hover:hover {
+  background: #ffcb87;
   text-decoration: none;
+  border-radius: 15%;
 }
 
 nav input {
-  color: white;
+  color: #000000;
 }
 
 .burger {
@@ -38,12 +38,18 @@ nav input {
 }
 
 @media screen and (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+    position: relative;
+    height: 100vh;
+  }
   .nav-links {
     position: absolute;
     right: 0;
     height: 93vh;
     top: 7vh;
-    background-color: #48b4b8;
+    background-color: #efefef;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -54,6 +60,9 @@ nav input {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
     width: 30%;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
@@ -119,10 +128,15 @@ to {
           animation: navLinkFade 1.1s ease forwards 0.2s;
 }
 
+.router-link-active {
+  background-color: #ffcd8d;
+  border-radius: 15%;
+}
+
 .burger div {
   width: 25px;
   height: 4px;
-  background-color: coral;
+  background-color: #ffc882;
   margin: 5px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
