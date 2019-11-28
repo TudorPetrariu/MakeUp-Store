@@ -10,10 +10,7 @@
           <router-link to="/home">Home</router-link>
         </li>
         <li>
-          <router-link to="/categories">Categories</router-link>
-        </li>
-        <li>
-          <a href="#">Random</a>
+          <a href="/random">Random</a>
         </li>
         <li>
           <input

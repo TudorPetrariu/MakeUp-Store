@@ -1,7 +1,6 @@
 <template>
   <div>
     <app-header></app-header>
-    <!-- <app-details></app-details> -->
     <router-view v-bind:products="products"></router-view>
   </div>
 </template>
@@ -10,17 +9,19 @@
 import { Component, Vue } from "vue-property-decorator";
 import Home from "./components/Home.vue";
 import Header from "./components/Header.vue";
-import Categories from "./components/Categories.vue";
 import Details from "./components/Details.vue";
-const acces = "https://cors-anywhere.herokuapp.com/";
+import RelevantItems from "./components/RelevantItems.vue";
+import RandomItem from "./components/RandomItem.vue";
+import AnotherRandomItem from "./components/AnotherRandomItem.vue";
 
-const url = `${acces}http://makeup-api.herokuapp.com/api/v1/products.json`;
 @Component({
   components: {
     "app-header": Header,
     "app-Home": Home,
-    "app-categories": Categories,
-    "app-details": Details
+    "app-details": Details,
+    "app-relevant": RelevantItems,
+    "app-random": RandomItem,
+    "app-orandom": AnotherRandomItem
   },
   data() {
     return {
@@ -36,12 +37,10 @@ const url = `${acces}http://makeup-api.herokuapp.com/api/v1/products.json`;
       }
     )
       .then(response => {
-        console.log(response);
+        // console.log(response);
         return response.json();
       })
       .then(result => result);
-
-    console.log(this.products);
   }
 })
 export default class App extends Vue {}

@@ -32,7 +32,6 @@
           </div>
         </div>
       </div>
-      <app-relevant v-bind:products="products"></app-relevant>
     </div>
   </div>
 </template>
@@ -43,9 +42,6 @@ import { Component, Vue } from "vue-property-decorator";
 import RelevantItems from "./RelevantItems.vue";
 
 @Component({
-  components: {
-    "app-relevant": RelevantItems
-  },
   props: ["products"],
   data() {
     return {
@@ -53,7 +49,7 @@ import RelevantItems from "./RelevantItems.vue";
     };
   },
   created() {
-    this.product = JSON.parse(localStorage.getItem("product"));
+    this.product = JSON.parse(localStorage.getItem("random"));
   }
 })
 export default class Details extends Vue {}

@@ -198,4 +198,77 @@ to {
     margin: 1px;
   }
 }
+
+.circle {
+  float: left;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  width: 10.22222%;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+}
+
+.circle:nth-child(9n) {
+  margin-right: 0;
+}
+
+@media only screen and (min-width: 678px) {
+  .item {
+    margin-top: 100px;
+    justify-items: center;
+    -ms-grid-row-align: center;
+        align-self: center;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .one .card {
+    height: 110%;
+    width: 450px;
+  }
+  .one .card .card-content {
+    width: 450px;
+  }
+  .one .card .card-content img {
+    width: 95%;
+    margin-left: 1%;
+  }
+}
+
+.random-item {
+  margin-top: 10%;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 50%;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.random-item img {
+  width: 50%;
+}
+
+.random-item .price {
+  color: #757373;
+  font-size: 20px;
+}
+
+.random-item button {
+  border: none;
+  padding: 12px;
+  color: white;
+  background-color: #ffc67d;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.random-item button:hover {
+  opacity: 0.7;
+}
 /*# sourceMappingURL=styles.css.map */

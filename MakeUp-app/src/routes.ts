@@ -1,10 +1,11 @@
 import Home from './components/Home.vue';
 import Details from './components/Details.vue';
-import Categories from './components/Categories.vue';
-
+import RandomItem from './components/RandomItem.vue';
+import AnotherRandomItem from './components/AnotherRandomItem.vue';
 export default [
 	{ path: '/', component: Home },
 	{ path: '/Home', component: Home },
-	{ path: '/Details/:Pid', name: 'Details', component: Details },
-	{ path: '/categories', component: Categories }
+	{ path: '/Details', name: 'Details', component: Details },
+	{ path: '/Random', component: RandomItem },
+	{ path: '/otherRandom', name: 'otherRandom', component: AnotherRandomItem }
 ];

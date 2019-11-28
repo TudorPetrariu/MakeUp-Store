@@ -45,11 +45,9 @@ import { EventBus } from "../event-bus";
   },
   methods: {
     goToDetail(product) {
-      console.log(product);
       localStorage.setItem("product", JSON.stringify(product));
       this.$router.push({
         name: "Details"
-        // params: { Pid: prodId }
       });
     }
   },
@@ -73,5 +71,3 @@ import { EventBus } from "../event-bus";
 export default class Home extends Vue {}
 </script>
 
-<style>
-</style>

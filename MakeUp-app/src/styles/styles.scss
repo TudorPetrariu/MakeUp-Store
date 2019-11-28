@@ -157,3 +157,63 @@ to {
 		}
 	}
 }
+
+.circle {
+	@include grid(9, 1%);
+	border-radius: 50%;
+	height: 35px;
+	width: 35px;
+}
+@media only screen and (min-width: 678px) {
+	.item {
+		margin-top: 100px;
+		justify-items: center;
+		align-self: center;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	.one {
+		.card {
+			height: 110%;
+			width: 450px;
+
+			.card-content {
+				width: 450px;
+				img {
+					width: 95%;
+					margin-left: 1%;
+				}
+			}
+		}
+	}
+}
+.random-item {
+	margin-top: 10%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 50%;
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	img {
+		width: 50%;
+	}
+	.price {
+		color: rgb(117, 115, 115);
+		font-size: 20px;
+	}
+	button {
+		border: none;
+		padding: 12px;
+		color: white;
+		background-color: darken($nav-color, 8);
+		text-align: center;
+		cursor: pointer;
+		width: 100%;
+		font-size: 18px;
+	}
+
+	button:hover {
+		opacity: 0.7;
+	}
+}
