@@ -12,7 +12,6 @@ import Header from "./components/Header.vue";
 import Details from "./components/Details.vue";
 import RelevantItems from "./components/RelevantItems.vue";
 import RandomItem from "./components/RandomItem.vue";
-import AnotherRandomItem from "./components/AnotherRandomItem.vue";
 
 @Component({
   components: {
@@ -20,8 +19,7 @@ import AnotherRandomItem from "./components/AnotherRandomItem.vue";
     "app-Home": Home,
     "app-details": Details,
     "app-relevant": RelevantItems,
-    "app-random": RandomItem,
-    "app-orandom": AnotherRandomItem
+    "app-random": RandomItem
   },
   data() {
     return {
@@ -37,7 +35,6 @@ import AnotherRandomItem from "./components/AnotherRandomItem.vue";
       }
     )
       .then(response => {
-        // console.log(response);
         return response.json();
       })
       .then(result => result);

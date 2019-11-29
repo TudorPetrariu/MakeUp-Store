@@ -25,13 +25,14 @@
             <p class="center">Available colors:</p>
             <div
               class="circle"
-              v-for="(color, index) in product.product_colors"
+              v-for="(color, index) in product.product_colors.slice(0,30)"
               :key="index"
               :style="{ 'background-color': color.hex_value}"
             ></div>
           </div>
         </div>
       </div>
+
       <app-relevant v-bind:products="products"></app-relevant>
     </div>
   </div>

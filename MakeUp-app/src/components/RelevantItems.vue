@@ -12,7 +12,6 @@
           <p>Category: {{product.category | to-uppercase}}</p>
           <p>Type: {{product.product_type.replace(/_/g, "-") | to-uppercase}}</p>
           <p>Price: {{product.price}} {{product.price_sign}}</p>
-          <hr />
           <p class="center">Available colors:</p>
           <div
             id="product-colors"

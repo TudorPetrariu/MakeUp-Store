@@ -12,7 +12,7 @@
 
             <p>Brand: {{product.brand | to-uppercase}}</p>
             <p>Category: {{product.category | to-uppercase}}</p>
-            <p>Type: {{product.product_type.replace(/_/g, "-") | to-uppercase}}</p>
+            <p>Type: {{product.product_type | replace | to-uppercase}}</p>
             <p>Price: {{product.price}} {{product.price_sign}}</p>
             <hr />
             <p>Available colors:</p>
