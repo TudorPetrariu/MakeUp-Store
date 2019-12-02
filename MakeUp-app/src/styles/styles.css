@@ -1,11 +1,75 @@
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  margin-left: 50%;
+}
+
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: #ffcd8d;
+  -webkit-animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+          animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  -webkit-animation-delay: -0.24s;
+          animation-delay: -0.24s;
+}
+
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  -webkit-animation-delay: -0.12s;
+          animation-delay: -0.12s;
+}
+
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+}
+
+@-webkit-keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%,
+  100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%,
+  100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
+body {
+  background-color: rgba(243, 240, 240, 0.836);
+}
+
 nav {
+  position: fixed;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,14 +87,14 @@ nav ul a {
   color: #000000;
 }
 
-nav a:hover:hover {
+nav ul a:hover {
   background: #ffcb87;
   text-decoration: none;
   border-radius: 15%;
 }
 
 nav input {
-  color: #000000;
+  color: #0000007c;
 }
 
 .burger {
@@ -63,7 +127,7 @@ nav input {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    width: 30%;
+    width: 35%;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
     -webkit-transition: -webkit-transform 0.5s ease-in;
@@ -76,6 +140,31 @@ nav input {
   }
   .burger {
     display: block;
+  }
+  .relevant #product-colors {
+    float: left;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    width: 10.22222%;
+    width: 10px;
+    padding: 6px;
+    margin: 2px;
+  }
+  .relevant #product-colors:nth-child(9n) {
+    margin-right: 0;
+  }
+  .home {
+    margin-left: 10%;
+    width: 90%;
+    margin-top: 15%;
+  }
+  #random-item {
+    margin-left: 10%;
+    width: 90%;
+    margin-top: 15%;
+  }
+  .lds-facebook {
+    margin-left: 40%;
   }
 }
 
@@ -142,97 +231,219 @@ to {
   transition: all 0.4s ease;
 }
 
-.card {
-  width: 95%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 200px 200px;
-      grid-template-columns: 200px 200px;
-  -ms-grid-rows: 250px;
-      grid-template-rows: 250px;
-  padding: 5px;
-}
-
-.card .card-content {
-  padding-left: 20px;
-}
-
-.card img {
-  height: 250px;
-}
-
-.card .card-title {
-  width: 100%;
-  margin-top: -20px;
-}
-
-#product-colors {
-  float: left;
-  margin-right: 1%;
-  margin-bottom: 1%;
-  width: 10.22222%;
-  width: 10px;
-  height: 10px;
-  padding: 6px;
-  margin: 2px;
-}
-
-#product-colors:nth-child(9n) {
-  margin-right: 0;
+.nav {
+  margin-bottom: 7%;
 }
 
 @media only screen and (max-width: 375px) {
   .card {
-    margin-left: 10%;
-    width: 80%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    width: 90%;
+  }
+  .card img {
+    max-height: 200px;
   }
   .card #product-colors {
-    margin: 1px;
+    float: left;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    width: 10.22222%;
+    width: 10px;
+    padding: 6px;
+    margin: 2px;
+  }
+  .card #product-colors:nth-child(9n) {
+    margin-right: 0;
+  }
+  #random-item {
+    min-height: 80vh;
+    margin-top: 20%;
+  }
+  #random-item .one .card .card-content {
+    overflow: auto;
+    height: 300px;
+  }
+  #random-item .btn {
+    background-color: #ffd8a6;
+    width: 100%;
+  }
+  .home {
+    min-height: 80vh;
+    margin-left: 10%;
+    margin-top: 25%;
+  }
+  .home h2 {
+    text-align: center;
+  }
+  #selected-item {
+    min-height: 80vh;
+    margin-left: 10%;
+    margin-top: 20%;
+  }
+  #selected-item .circle {
+    float: left;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    width: 23.5%;
+    border-radius: 20%;
+    margin: 2px;
+    height: 1em;
+    width: 1em;
+  }
+  #selected-item .circle:nth-child(4n) {
+    margin-right: 0;
+  }
+  .lds-facebook {
+    margin-right: 80%;
   }
 }
 
 .circle {
   float: left;
-  margin-right: 1%;
-  margin-bottom: 1%;
-  width: 10.22222%;
-  border-radius: 50%;
-  height: 35px;
-  width: 35px;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  width: 9.33333%;
+  border-radius: 20%;
+  margin: 2px;
+  height: 1em;
+  width: 1em;
 }
 
 .circle:nth-child(9n) {
   margin-right: 0;
 }
 
-@media only screen and (min-width: 678px) {
-  .item {
-    margin-top: 100px;
+@media only screen and (min-width: 600px) {
+  #selected-item {
+    min-height: 90vh;
     justify-items: center;
-    -ms-grid-row-align: center;
-        align-self: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: (45%)[2];
+        grid-template-columns: repeat(2, 45%);
   }
-  .one .card {
-    height: 100%;
-    width: 450px;
+  #selected-item a {
+    font-weight: bold;
+    color: #ffcd8d;
   }
-  .one .card .card-content {
-    width: 450px;
+  #selected-item .one {
+    width: 70%;
   }
-  .one .card .card-content img {
+  #selected-item .one .card .card-content img {
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 250px;
+    width: 70%;
+  }
+  .relevant .card {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (220px)[2];
+        grid-template-columns: repeat(2, 220px);
+  }
+  .relevant .card img {
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 200px;
+  }
+  .relevant .card a {
+    font-weight: bold;
+    color: #ffcd8d;
+  }
+  .relevant #product-colors {
+    float: left;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    width: 10.22222%;
+    width: 10px;
+    padding: 6px;
+    margin: 2px;
+  }
+  .relevant #product-colors:nth-child(9n) {
+    margin-right: 0;
+  }
+  #random-item {
+    min-height: 100vh;
+  }
+  #random-item .one .card {
+    margin-left: 25%;
+    width: 50%;
+    border-radius: 5%;
+  }
+  #random-item .one .card .card-content {
+    overflow: auto;
+    height: 300px;
+  }
+  #random-item .one .card img {
+    height: 250px;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #random-item .btn {
+    background-color: #ffd8a6;
+    margin-left: 40%;
+  }
+  .home {
+    min-height: 100vh;
+  }
+  .home .container .card {
     width: 95%;
-    margin-left: 1%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 200px 200px;
+        grid-template-columns: 200px 200px;
+    grid-column-gap: 20px;
+    -ms-grid-rows: 250px;
+        grid-template-rows: 250px;
+  }
+  .home .container .card img {
+    height: 100%;
+  }
+  .home .container .card a {
+    cursor: pointer;
+  }
+  .home .container .card .card-content {
+    padding-left: 20px;
+  }
+  .home .container .card .card-content .card-title {
+    width: 100%;
+    margin-top: -20px;
+  }
+  .home .container .card #product-colors {
+    float: left;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    width: 10.22222%;
+    width: 10px;
+    height: 10px;
+    padding: 6px;
+    margin: 2px;
+  }
+  .home .container .card #product-colors:nth-child(9n) {
+    margin-right: 0;
   }
 }
 
-.random .card-content {
-  width: 400px;
+.page-footer {
+  background-color: #e2e2e2;
+}
+
+.page-footer h5 {
+  color: #ffab40;
+}
+
+.page-footer li {
+  opacity: 1;
+}
+
+.page-footer li a {
+  color: #ffffff;
+}
+
+.page-footer li .router-link-active {
+  background-color: transparent;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -1,10 +1,9 @@
    <template>
-  <div>
+  <div class="nav">
     <nav>
       <div>
-        <h4>The Nav</h4>
+        <h4>DTT</h4>
       </div>
-
       <ul v-bind:class="{active:isTrue}" class="nav-links">
         <li>
           <router-link to="/home">Home</router-link>
@@ -13,15 +12,9 @@
           <router-link to="/random">Random</router-link>
         </li>
         <li>
-          <input
-            v-model="search"
-            type="text"
-            placeholder="Search your product ..."
-            @keyup="emitSearchValue"
-          />
+          <input v-model="search" type="text" placeholder="Search" @keyup="emitSearchValue" />
         </li>
       </ul>
-
       <div v-on:click="isTrue= !isTrue" v-bind:class="{toggle:isTrue}" class="burger">
         <div class="line1"></div>
         <div class="line2"></div>

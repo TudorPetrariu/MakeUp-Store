@@ -1,7 +1,9 @@
 <template>
   <div>
     <app-header></app-header>
+    <app-loader v-if="show"></app-loader>
     <router-view v-bind:products="products"></router-view>
+    <app-footer></app-footer>
   </div>
 </template>
 
@@ -12,19 +14,24 @@ import Header from "./components/Header.vue";
 import Details from "./components/Details.vue";
 import RelevantItems from "./components/RelevantItems.vue";
 import RandomItem from "./components/RandomItem.vue";
+import Sitemap from "./components/Sitemap.vue";
+import Loader from "./components/Loader.vue";
 
 @Component({
   components: {
+    "app-loader": Loader,
     "app-header": Header,
     "app-Home": Home,
     "app-details": Details,
     "app-relevant": RelevantItems,
-    "app-random": RandomItem
+    "app-random": RandomItem,
+    "app-footer": Sitemap
   },
   data() {
     return {
       products: [],
-      allProducts: []
+      allProducts: [],
+      show: Boolean
     };
   },
   async created() {
@@ -38,9 +45,8 @@ import RandomItem from "./components/RandomItem.vue";
         return response.json();
       })
       .then(result => result);
+    this.show = false;
   }
 })
 export default class App extends Vue {}
 </script>
-<style >
-</style>

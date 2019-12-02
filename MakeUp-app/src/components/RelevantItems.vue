@@ -1,16 +1,15 @@
 <template>
   <div>
-    <div v-for="product in getThreeRelevantProducts " :key="product.index">
+    <div class="relevant" v-for="product in getThreeRelevantProducts " :key="product.index">
       <div class="card">
         <div class="card-image">
           <img :src="product.api_featured_image" alt="product" />
         </div>
         <div class="card-content">
-          <span class="card-title">{{product.name}}</span>
-
+          <h5>{{product.name}}</h5>
           <p>Brand: {{product.brand | to-uppercase}}</p>
           <p>Category: {{product.category | to-uppercase}}</p>
-          <p>Type: {{product.product_type.replace(/_/g, "-") | to-uppercase}}</p>
+          <a v-bind:href="product.product_link">Visit similar products</a>
           <p>Price: {{product.price}} {{product.price_sign}}</p>
           <p class="center">Available colors:</p>
           <div
