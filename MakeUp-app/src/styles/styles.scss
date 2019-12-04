@@ -140,6 +140,17 @@ nav {
 	.lds-facebook {
 		margin-left: 40%;
 	}
+	#categories {
+		.card {
+			width: 90%;
+			img {
+				max-height: 250px;
+			}
+		}
+		p {
+			font-size: 0.7em;
+		}
+	}
 }
 
 @keyframes navLinkFade {
@@ -242,6 +253,17 @@ to {
 
 	.lds-facebook {
 		margin-right: 80%;
+	}
+	.browser-default {
+		margin-top: 20%;
+		background-color: lighten($nav-color, 2);
+		// font-size: 1em;
+		border-radius: 30px;
+		width: 15%;
+		margin-left: 75%;
+		option {
+			background-color: $main-color;
+		}
 	}
 }
 .circle {
@@ -358,6 +380,39 @@ to {
 			}
 		}
 	}
+
+	#categories {
+		display: grid;
+		grid-template-columns: repeat(3, 25%);
+		grid-column-gap: 1%;
+		min-height: 70vh;
+		justify-content: center;
+
+		.container {
+			.card {
+				img {
+					height: 250px;
+					width: 100%;
+				}
+				.card-content {
+					height: 220px;
+
+					p {
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+	.browser-default {
+		background-color: lighten($nav-color, 2);
+		border-radius: 30px;
+		width: 8%;
+		margin-left: 80%;
+		option {
+			background-color: $main-color;
+		}
+	}
 }
 
 .page-footer {
@@ -368,7 +423,6 @@ to {
 	background-color: darken($main-color, 5);
 	li {
 		opacity: 1;
-
 		a {
 			color: #ffffff;
 		}

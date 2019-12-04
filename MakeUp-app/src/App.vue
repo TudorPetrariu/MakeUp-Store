@@ -16,6 +16,8 @@ import RelevantItems from "./components/RelevantItems.vue";
 import RandomItem from "./components/RandomItem.vue";
 import Sitemap from "./components/Sitemap.vue";
 import Loader from "./components/Loader.vue";
+import Categories from "./components/Categories.vue";
+const acces = "https://cors-anywhere.herokuapp.com/";
 
 @Component({
   components: {
@@ -25,13 +27,14 @@ import Loader from "./components/Loader.vue";
     "app-details": Details,
     "app-relevant": RelevantItems,
     "app-random": RandomItem,
-    "app-footer": Sitemap
+    "app-footer": Sitemap,
+    "app-categories": Categories
   },
   data() {
     return {
       products: [],
       allProducts: [],
-      show: Boolean
+      show: true
     };
   },
   async created() {
@@ -45,6 +48,7 @@ import Loader from "./components/Loader.vue";
         return response.json();
       })
       .then(result => result);
+    console.log(this.products);
     this.show = false;
   }
 })

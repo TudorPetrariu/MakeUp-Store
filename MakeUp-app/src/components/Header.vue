@@ -12,6 +12,9 @@
           <router-link to="/random">Random</router-link>
         </li>
         <li>
+          <router-link to="/categories">Categories</router-link>
+        </li>
+        <li>
           <input v-model="search" type="text" placeholder="Search" @keyup="emitSearchValue" />
         </li>
       </ul>

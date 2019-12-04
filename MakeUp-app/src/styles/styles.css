@@ -166,6 +166,15 @@ nav input {
   .lds-facebook {
     margin-left: 40%;
   }
+  #categories .card {
+    width: 90%;
+  }
+  #categories .card img {
+    max-height: 250px;
+  }
+  #categories p {
+    font-size: 0.7em;
+  }
 }
 
 @-webkit-keyframes navLinkFade {
@@ -294,6 +303,16 @@ to {
   }
   .lds-facebook {
     margin-right: 80%;
+  }
+  .browser-default {
+    margin-top: 20%;
+    background-color: #ffdcb0;
+    border-radius: 30px;
+    width: 15%;
+    margin-left: 75%;
+  }
+  .browser-default option {
+    background-color: #efefef;
   }
 }
 
@@ -424,6 +443,36 @@ to {
   }
   .home .container .card #product-colors:nth-child(9n) {
     margin-right: 0;
+  }
+  #categories {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (25%)[3];
+        grid-template-columns: repeat(3, 25%);
+    grid-column-gap: 1%;
+    min-height: 70vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #categories .container .card img {
+    height: 250px;
+    width: 100%;
+  }
+  #categories .container .card .card-content {
+    height: 220px;
+  }
+  #categories .container .card .card-content p {
+    font-weight: bold;
+  }
+  .browser-default {
+    background-color: #ffdcb0;
+    border-radius: 30px;
+    width: 8%;
+    margin-left: 80%;
+  }
+  .browser-default option {
+    background-color: #efefef;
   }
 }
 
